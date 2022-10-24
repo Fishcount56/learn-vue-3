@@ -1,15 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Hello, {{ name }}</h1>
+    <h1 v-bind:class="underline">Hello</h1>
+    <h1 v-bind:class="isPromoted && 'promoted'">Promoted</h1>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      name: "Luthfi",
+      status: "Success",
+      underline: "underlined",
+      isPromoted: true
+    }
   }
 }
 </script>
@@ -22,5 +28,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.promoted {
+    font-style: italic;
 }
 </style>
